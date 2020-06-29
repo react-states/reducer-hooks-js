@@ -1,0 +1,7 @@
+/* Constants from AUTH REDUCER */
+export const AUTH_LOADING_LOGIN = 'LOGIN_LOADING'
+
+/* Constants from USER REDUCER */
+export const USER_SET_DATA = 'SET_USER'
+export const USER_SET_IS_FETCHING = 'USER_SET_IS_FETCHING'
+export const USER_SET_DONE_FETCHING = 'USER_SET_DONE_FETCHING'
