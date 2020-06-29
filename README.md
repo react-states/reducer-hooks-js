@@ -13,4 +13,4 @@ In the project directory, you can run:
 2. npm run `start`  - to start react project
 3. npm run `build`  - to start react to build production
 
-Note for continues development
+Note for ongoing development
