@@ -16,4 +16,4 @@ In the project directory, you can run:
 Note for ongoing development
 
 
-For more enhancement feature, please add it on issue `https://github.com/react-states/reducer-hooks-js/issues`
+For more enhancement feature, please create an issue.
