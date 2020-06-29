@@ -14,3 +14,6 @@ In the project directory, you can run:
 3. npm run `build`  - to start react to build production
 
 Note for ongoing development
+
+
+For more enhancement feature, please add it on issue `https://github.com/react-states/reducer-hooks-js/issues`
