@@ -16,4 +16,4 @@ In the project directory, you can run:
 Note for ongoing development
 
 
-For more feature enhancement, please create an issue.
+For more feature enhancements, please create an issue.
