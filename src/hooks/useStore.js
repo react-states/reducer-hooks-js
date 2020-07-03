@@ -3,7 +3,8 @@ import { store, actions } from "../store";
 
 export const useStore = () => {
   const { state, dispatch } = useContext(store);
-  const dispatchAction = (action) => dispatch(action);
+  
+  const dispatchAction = (action) => action && dispatch(action);
 
   return { state, dispatchAction, actions };
 };

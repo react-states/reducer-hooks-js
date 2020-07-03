@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useStore } from "../../hooks";
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
   return (
     <div>
       <button
-        onClick={() => dispatchAction(actions.setUserAuthenticated(true))}
+        onClick={() => dispatchAction()}
       >
         Authenticate
       </button>
