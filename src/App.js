@@ -1,9 +1,5 @@
-import React, { useContext } from "react";
+import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-
-import { store, actions } from "./store";
-import { useTrivia, useStore } from "./hooks";
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +9,7 @@ import { ProtectedRoute, PublicRoute } from "./navigations";
 import Dashboard from "./pages/Dashboard";
 import Account from "./pages/Account";
 import Login from "./pages/Login";
+import { useStore } from "./hooks";
 
 const App = () => {
   
