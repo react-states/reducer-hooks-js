@@ -1,5 +1,9 @@
+/* Constants from APP STATE REDUCER */
+export const SET_APP_LOADING = 'SET_APP_LOADING'
+
 /* Constants from AUTH REDUCER */
 export const AUTH_LOADING_LOGIN = 'LOGIN_LOADING'
+export const SET_AUTHENTICATED = 'SET_AUTHENTICATED'
 
 /* Constants from USER REDUCER */
 export const USER_SET_DATA = 'SET_USER'

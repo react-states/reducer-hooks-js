@@ -1,32 +1,70 @@
 import React, { useContext } from "react";
-import { store, dispatch, actions } from "./store";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-function App() {
-  const { state, dispatch } = useContext(store);
+import { store, actions } from "./store";
+import { useTrivia, useStore } from "./hooks";
 
-  const handleReverse = () => {
-    dispatch(actions.setUserFetching(false));
-  };
+import {
+  BrowserRouter as Router,
+  Switch,
+} from "react-router-dom";
+
+import { ProtectedRoute, PublicRoute } from "./navigations";
+import Dashboard from "./pages/Dashboard";
+import Account from "./pages/Account";
+import Login from "./pages/Login";
+
+const App = () => {
+  
+  const { state } = useStore();
+
+  const {
+    authenticationState: { isAuthenticated },
+  } = state;
+
+  const AuthenticatedNavigations = () => (
+    <TransitionGroup>
+      <CSSTransition classNames="fade" timeout={3000}>
+        <Switch>
+          <ProtectedRoute
+            path="/dashboard"
+            component={Dashboard}
+            isAuthenticated={isAuthenticated}
+          />
+          <ProtectedRoute
+            path="/account"
+            component={Account}
+            isAuthenticated={isAuthenticated}
+          />
+        </Switch>
+      </CSSTransition>
+    </TransitionGroup>
+  );
+
+  const PublicNavigations = () => (
+    <TransitionGroup>
+      <CSSTransition classNames="fade" timeout={3000}>
+        <Switch>
+          <PublicRoute
+            path="/login"
+            exact
+            isAuthenticated={isAuthenticated}
+            component={Login}
+          />
+        </Switch>
+      </CSSTransition>
+    </TransitionGroup>
+  );
 
   return (
-    <div className="App">
-      authenticated:isLoading:
-      {state.authenticationState.isLoading ? " true\n" : "false\n"}
-      <br />
-      <button
-        onClick={() => {
-          dispatch(actions.setLoadingLogin());
-          dispatch(actions.setUserFetching(true));
-        }}
-      >
-        State Management
-      </button>
-      <br />
-      user:isFetching: {state.userState.isFetching ? " true\n" : "false\n"}
-      <br />
-      <button onClick={handleReverse}>Reverse fetching</button>
-    </div>
+    <>
+      <>{JSON.stringify(state)}</>
+      <Router>
+        <AuthenticatedNavigations />
+        <PublicNavigations />
+      </Router>
+    </>
   );
-}
+};
 
 export default App;

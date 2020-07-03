@@ -1,8 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { toast } from 'react-toastify';
 import * as serviceWorker from "./serviceWorker";
+import App from "./App";
 import { GlobalStateProvider } from "./store";
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure({
+  position: "top-right",
+  autoClose: 3000,
+});
 
 ReactDOM.render(
   <React.StrictMode>

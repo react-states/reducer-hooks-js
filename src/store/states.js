@@ -6,4 +6,9 @@ export const authInitialState = {
 export const userInitialState = {
   isFetching: false,
   user: {},
+  dispatch: {}
+};
+
+export const appState = {
+  isLoading: false,
 };

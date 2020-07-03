@@ -1,16 +1,16 @@
 import * as contants from "../constants";
 
 /**
- * 
- * @param {*} state, current user state
+ *
+ * @param {*} state, current app state
  * @param {*} action, action that contains type and payload(?)
  */
-export const user = (state, action) => {
+export const app = (state, action) => {
   switch (action.type) {
-    case contants.USER_SET_IS_FETCHING:
+    case contants.SET_APP_LOADING:
       return {
         ...state,
-        isFetching: action.payload.isFetching,
+        isLoading: action.payload,
       };
     default:
       return state;
